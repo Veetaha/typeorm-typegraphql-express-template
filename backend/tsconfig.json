@@ -1,0 +1,56 @@
+{
+    "compilerOptions": {
+        "outDir":  "./../build",
+        "baseUrl": ".",        
+        "target":  "es2018",   // es-tspm package currently supports ^es2018
+        "module":  "commonjs", // transpile import statements, to require()
+        "moduleResolution": "node",
+        "lib":       ["esnext"],
+        "typeRoots": [ "../node_modules/@types", "../common/ambient-declarations" ],
+        "paths": {
+            "@app/*":        [ "./*"                  ],
+            "@common/*":     [ "../common/*"          ],
+            "@routes/*":     [ "routes/*"             ],
+            "@modules/*":    [ "modules/*"            ],
+            "@utils/*":      [ "modules/utils/*"      ],            
+            "@entities/*":   [ "entities/*"           ],
+            "@graphql/*":    [ "graphql/*"            ]
+        },     
+
+        "sourceMap":       false, // es-tspm distorts source mappings, so there is no use
+        "declaration":     false, 
+        "declarationMap":  false, 
+        "esModuleInterop": true, 
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators":       true,
+        "emitDecoratorMetadata":        true,
+        /* Checking severity level */
+        "strict":                           true,
+        "noUnusedLocals":                   true,
+        "noUnusedParameters":               true,
+        "noImplicitAny":                    true,
+        "noImplicitThis":                   true,
+        "noImplicitReturns":                true,
+        "noFallthroughCasesInSwitch":       true,
+        "strictBindCallApply":              true,
+        "strictFunctionTypes":              true,
+        "strictNullChecks":                 true,
+        "strictPropertyInitialization":     true,
+        "forceConsistentCasingInFileNames": true,
+        "noStrictGenericChecks":            false,
+        "allowUnreachableCode":             false,
+        /* Misc */
+        "alwaysStrict": true,
+        "pretty":       true
+    },
+    "files": ["app.ts"],
+    "include": [
+        "**/*",
+        "../common/**/*"
+    ],
+    "exclude": [
+        "node_modules/**/*", 
+        "build", 
+        "../common/ambient-declarations/**/*"
+    ]
+}

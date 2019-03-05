@@ -1,0 +1,20 @@
+{
+    "overwrite": true,
+    "schema":    "common/schema.graphql",
+    "documents": "frontend/src/app/graphql/documents.graphql",
+    "generates": {
+        "../frontend/src/graphql/generated.ts": {
+            "config": {
+                "scalars": {
+                    "DateTime": "string"
+                },
+                "interfacePrefix": ""
+            },
+            "plugins": [
+                "typescript-common",
+                "typescript-client",
+                "typescript-apollo-angular"
+            ]
+        }
+    }
+}
